@@ -1,11 +1,11 @@
 import fs from "node:fs";
 
-export function deleteUser(req, res) {
+export function updateUser(req, res) {
 
     const data =
         JSON.parse(
             fs.readFileSync(
-                "./db/users.json",
+                "./users.json",
                 "utf8"
             )
         );
@@ -13,27 +13,27 @@ export function deleteUser(req, res) {
     const id =
         Number(req.params.id);
 
-    const index =
-        data.users.findIndex(
-            user => user.id === id
+    const user =
+        data.find(
+            user => user.id == id
         );
 
-    if (index === -1) {
+    if (!user) {
         return res.status(404).json({
             message: "User not found"
         });
     }
 
-    const deletedUser =
-        data.users.splice(index, 1);
+    user.name =
+        req.body.name ?? user.name;
+
+    user.email =
+        req.body.email ?? user.email;
 
     fs.writeFileSync(
-        "./db/users.json",
+        "./users.json",
         JSON.stringify(data, null, 2)
     );
 
-    res.json({
-        message: "User deleted",
-        user: deletedUser[0]
-    });
+    res.json(user);
 }

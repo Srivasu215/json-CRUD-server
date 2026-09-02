@@ -5,10 +5,10 @@ export function readUsers(req, res) {
     const data =
         JSON.parse(
             fs.readFileSync(
-                "./db/users.json",
+                "./users.json",
                 "utf8"
             )
         );
 
-    res.json(data.users);
+    res.json(data);
 }

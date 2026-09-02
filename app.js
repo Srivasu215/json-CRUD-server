@@ -2,19 +2,19 @@ import express from "express";
 
 import {
     createUser
-} from "./api/create/createUser.js";
+} from "./createUser.js";
 
 import {
     readUsers
-} from "./api/read/readUsers.js";
+} from "./readUsers.js";
 
 import {
     updateUser
-} from "./api/update/updateUser.js";
+} from "./updateUser.js";
 
 import {
     deleteUser
-} from "./api/delete/deleteUser.js";
+} from "./deleteUser.js";
 
 const app = express();
 
@@ -22,25 +22,25 @@ app.use(express.json());
 
 // CREATE
 app.post(
-    "/api/users",
+    "/users",
     createUser
 );
 
 // READ
 app.get(
-    "/api/users",
+    "/users",
     readUsers
 );
 
 // UPDATE
 app.put(
-    "/api/users/:id",
+    "/users/:id",
     updateUser
 );
 
 // DELETE
 app.delete(
-    "/api/users/:id",
+    "/users/:id",
     deleteUser
 );
 

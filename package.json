@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node analyzer/v1/run.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

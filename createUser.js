@@ -5,7 +5,7 @@ export function createUser(req, res) {
     const data =
         JSON.parse(
             fs.readFileSync(
-                "./db/users.json",
+                "./users.json",
                 "utf8"
             )
         );
@@ -16,10 +16,10 @@ export function createUser(req, res) {
         email: req.body.email
     };
 
-    data.users.push(user);
+    data.push(user);
 
     fs.writeFileSync(
-        "./db/users.json",
+        "./users.json",
         JSON.stringify(data, null, 2)
     );
 

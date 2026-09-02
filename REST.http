@@ -1,0 +1,21 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+PUT http://localhost:3000/users/1788326682793
+Content-Type: application/json
+
+{
+  "name": "Jane kk",
+  "email": "jane.doe@example.com"
+}
+###
+DELETE http://localhost:3000/users/1788326889765
