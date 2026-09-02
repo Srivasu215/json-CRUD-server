@@ -1,0 +1,25 @@
+{
+  "name": "json-crud-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js JSON CRUD server that provides Create, Read, Update, and Delete REST APIs using a JSON file as the data store.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node analyzer/v1/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Srivasu215/json-CRUD-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Srivasu215/json-CRUD-server/issues"
+  },
+  "homepage": "https://github.com/Srivasu215/json-CRUD-server#readme",
+  "dependencies": {
+    "@babel/parser": "^8.0.4",
+    "express": "^5.2.1"
+  }
+}
